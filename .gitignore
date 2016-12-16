@@ -54,3 +54,7 @@ crowdin.yaml
 
 ne*.txt
 certs/
+
+GTAGS
+GRTAGS
+GPATH
