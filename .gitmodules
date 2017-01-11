@@ -1,0 +1,3 @@
+[submodule "node-ssp"]
+	path = validator
+	url = /home/face/projects/atm.git/

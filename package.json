@@ -16,6 +16,7 @@
     "minimist": "~0.2.0",
     "nconf": "~0.6.9",
     "node-forge": "~0.2.36",
+    "node-ssp": "file:///home/face/projects/atm/node-ssp-1.0.0.tgz",
     "node-uuid": "~1.4.2",
     "ramda": "^0.21.0",
     "serialport": "^4.0.1",

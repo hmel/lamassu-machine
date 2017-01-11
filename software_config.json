@@ -34,11 +34,6 @@
     "maxSignal": -50,
     "truncateLength": 16
   },
-  "id003": {
-    "timeout": 60000,
-    "transientTimeout": 60000,
-    "resetThrottle": 120000
-  },
   "updater": {
     "port": 8000,
     "host": "updates.lamassu.is",
