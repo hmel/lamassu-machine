@@ -39,7 +39,7 @@ istanbul
 
 *.csv#
 
-/device_config.json
+#/device_config.json
 /data
 /coverage
 /fonts
