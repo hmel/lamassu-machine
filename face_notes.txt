@@ -1,0 +1,2 @@
+totem format is
+base64(CaHash(32 bytes) | token (32 bytes hex encoded) | 

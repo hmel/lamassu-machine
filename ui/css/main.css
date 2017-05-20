@@ -49,11 +49,11 @@ strong {
 
 h1 { margin: 0;}
 body  { margin: 0;}
-#view { background-color: #37E8D7; width: 1280px; height: 800px; position: relative; }
+#view { background-color: #37E8D7; width: 1050px; height: 800px; position: relative; }
 .viewport {
   position: absolute;
   top: 0; left: 0;
-  width: 1280px;
+  width: 1050px;
   height: 800px;
   display: none;
 }
@@ -211,7 +211,7 @@ body  { margin: 0;}
 
 .keypad {
   position: absolute;
-  left: 713;
+  left: 493;
   height: 800px;
   width: 567px;
 }
@@ -456,7 +456,7 @@ body  { margin: 0;}
 }
 
 .or {
-  width: 1200px;
+  width: 1050px;
   position: absolute; top: 163; left: 80;
   text-align: center;
 
@@ -625,13 +625,13 @@ body  { margin: 0;}
 
 /* info screen */
 .info {
-  width: 1280; height: 800;
+  width: 1050; height: 800;
   text-align: center;
   background-color: #FFFFFF;
 }
 
 .info .top {
-  height: 620px; width: 1200px;
+  height: 620px; width: 1050px;
   border: solid 40px #37e8d7;
   border-bottom: none;
   position: relative;
@@ -647,7 +647,7 @@ body  { margin: 0;}
 }
 
 .info .bottom {
-  height: 100px; width: 1200;
+  height: 100px; width: 1050;
   border: solid 40px #5f5f55;
   border-top: none;
 }
@@ -1739,7 +1739,7 @@ body  { margin: 0;}
 #coin-redeem {
   position: absolute;
   top: 698px;
-  left: 1040px;
+  left: 600px;
   font-weight: bold;
   border-radius: 38px/50%;
   color: #ffffff;

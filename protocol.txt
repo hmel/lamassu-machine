@@ -1,0 +1,185 @@
+Pairing:
+https://${hostname}:${PORT}/ca?token=${caHexToken}
+https://${hostname}:${PORT}/pair?token=${hexToken}
+
+Polling:
+/poll?state=initial&idle=false&pid=9c3b7c29-7751-49c0-ace1-3546848aac45&force_config=true
+
+
+Register phone number:
+POST
+/phone_code
+{"phone":{"phone":"+18547888"}}
+response:
+{code: "12345"}
+
+Verify user:
+POST
+/verify_user
+{
+	"license": {
+		"uid": "dc14ea4bcfd96529083f25d50c359c278255710d555afbd778ae625890900fa2",
+		"lastName": "NAKAMOTO",
+		"firstName": "SATOSHI R",
+		"dateOfBirth": "19711207",
+		"address": "13 ELM ST",
+		"city": "GRAFTON",
+		"state": "NH",
+		"postalCode": "03240",
+		"country": "USA"
+	},
+	"documentType": "driversLicenseNA"
+}
+response:
+{success: true}
+
+=====================
+POST
+/verify_transaction
+{
+	"license": {
+		"uid": "dc14ea4bcfd96529083f25d50c359c278255710d555afbd778ae625890900fa2",
+		"lastName": "NAKAMOTO",
+		"firstName": "SATOSHI R",
+		"dateOfBirth": "19711207",
+		"address": "13 ELM ST",
+		"city": "GRAFTON",
+		"state": "NH",
+		"postalCode": "03240",
+		"country": "USA"
+	},
+	"documentType": "driversLicenseNA",
+	"transaction": {
+		"toAddress": "14gGnhCAbZ4TkiqpCwJQ6xpjpmhPHLcKy5",
+		"fiatCode": "EUR",
+		"fiat": 3,
+		"buyOrSell": "buy"
+	}
+}
+
+===================
+
+Send bitcoins:
+POST
+/send
+{
+	"id": "533bf762-fca7-4439-8b34-0df93b3b4cb6",
+	"toAddress": "14gGnhCAbZ4TkiqpCwJQ6xpjpmhPHLcKy5",
+	"cryptoAtoms": "666600",
+	"satoshis": "666600",
+	"fiatCode": "EUR",
+	"fiat": 3,
+	"cryptoCode": "BTC",
+	"sequenceNumber": 4
+}
+
+
+
+=====================
+Cash out:
+POST
+/cash_out
+{
+	"fiat": 100,
+	"cryptoAtoms": "22561600",
+	"fiatCode": "EUR",
+	"toAddress": null,
+	"cryptoCode": "BTC",
+	"direction": "cashOut",
+	"id": "a03d2beb-443b-4310-9eef-7d811fe17963",
+	"bills": [{
+		"count": 0,
+		"denomination": "5"
+	}, {
+		"count": 10,
+		"denomination": "10"
+	}],
+	"started": false
+}
+
+
+==========================
+GET
+/await_dispense/cf59fe3d-6af7-407c-91d8-f7b68b34069a?status=notSeen
+
+response json
+{
+         tx {
+         id: "xxx",
+         status: ['instant' | 'confirmed' | 'rejected' | 'published' |
+         'authorized'],
+         cryptoCode: "BTC",
+         fiat: int
+         }
+}
+
+
+=====================
+POST
+/dispense
+{
+	"tx": {
+		"fiat": 10,
+		"cryptoAtoms": "2256200",
+		"fiatCode": "EUR",
+		"toAddress": "mjteFnRdidU2Kn4Hk1yrom4TeL8EbvgWL8",
+		"cryptoCode": "BTC",
+		"direction": "cashOut",
+		"id": "8391824c-31b2-448a-a71b-4d3eaef0aa0a",
+		"bills": [{
+			"count": 0,
+			"denomination": "5"
+		}, {
+			"count": 1,
+			"denomination": "10"
+		}],
+		"started": true
+	}
+}
+
+response json
+{
+        dispense: true,
+        txId: "xxxxxx"
+}
+
+
+========================
+POST
+/dispense_ack
+{
+	"tx": {
+		"fiat": 10,
+		"cryptoAtoms": "2256200",
+		"fiatCode": "EUR",
+		"toAddress": "mjteFnRdidU2Kn4Hk1yrom4TeL8EbvgWL8",
+		"cryptoCode": "BTC",
+		"direction": "cashOut",
+		"id": "d542bf9f-f55f-4620-b3a1-6d26c9fcc232",
+		"bills": [{
+			"count": 0,
+			"denomination": "5",
+			"actualDispense": 0,
+			"rejected": 0
+		}, {
+			"count": 1,
+			"denomination": "10",
+			"actualDispense": 1,
+			"rejected": 0
+		}],
+		"started": true
+	},
+	"cartridges": [{
+		"denomination": "5",
+		"count": 10
+	}, {
+		"denomination": "10",
+		"count": 9
+	}]
+}
+
+
+================================
+POST
+/state
+{"state":"fiatComplete","isIdle":false,"uuid":"c80007cb-f7ce-4f45-b93e-05ec30d4b926"}
